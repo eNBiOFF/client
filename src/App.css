@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(321.09deg, rgba(81, 213, 189, 0.2) 22.33%, rgba(176, 242, 160, 0) 55.38%), linear-gradient(166.07deg, rgba(255, 131, 235, 0.2) 9.94%, rgba(0, 0, 0, 0) 64.65%), #21282B;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
