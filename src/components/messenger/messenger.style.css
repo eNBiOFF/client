@@ -1,0 +1,10 @@
+.mess {
+    width: 67.87vw;
+    height: 78vh;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

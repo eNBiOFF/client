@@ -1,0 +1,31 @@
+.room {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+}
+
+.info_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    width: 74%;
+}
+
+.ava {
+    width: 20%;
+}
+
+.username_info {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message_content {
+    color: gray;
+    font-size: 18px;
+}

@@ -1,0 +1,13 @@
+import React, { useCallback } from 'react'
+import './header.style.css'
+import userAvatar from '../../../assets/userAvatar.png'
+import { useNavigate } from 'react-router'
+
+export const Header = () => {
+
+    return(
+        <div className='mess'>
+            
+        </div>
+    )
+}
