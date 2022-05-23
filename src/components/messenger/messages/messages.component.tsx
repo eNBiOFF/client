@@ -55,7 +55,8 @@ export const Message = (props: props) => {
         <div className='message_content' onClick={role}>
             <div className='author'>{props.author}</div>
             {/* {props.content} */}
-            {props.type === 'File' ? filename + '<>нажми на меня, чтобы скачать файл' : props.content}
+            {props.type === 'File' ? filename : props.content}
+            <div>{props.type === 'File' && 'Нажми на меня, чтобы скачать файл'}</div>
         </div>
     )
 }
