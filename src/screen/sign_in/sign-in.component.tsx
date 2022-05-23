@@ -26,9 +26,24 @@ export const SignInForm : FC = () => {
         })
         const res = await promise
         const data = await res.json()
+        const fetchUser = await fetch('/user', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization' : 'Bearer '+ data.accesToken
+            }
+        })
+        const userData = await fetchUser.json()
+        console.log(data)
         if (data.errorText) {
             setErr(true)
         } else {
+            localStorage.setItem('token',data.accesToken)
+            localStorage.setItem('login',login)
+            localStorage.setItem('id_user', userData?.id)
+            localStorage.setItem('phone', userData?.phoneNumber)
+            localStorage.setItem('nick', userData?.nickname)
+            
             nav('/main')
         }
     }, [login,pass,nav])

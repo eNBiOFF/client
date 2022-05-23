@@ -7,6 +7,10 @@
     height: 76px;
 }
 
+.room:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
 .info_content {
     display: flex;
     flex-direction: column;
@@ -21,8 +25,9 @@
 
 .username_info {
     color: white;
-    font-size: 20px;
+    font-size: 34px;
     font-weight: bold;
+    margin: auto;
 }
 
 .message_content {

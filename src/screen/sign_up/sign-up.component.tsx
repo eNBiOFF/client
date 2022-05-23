@@ -39,10 +39,23 @@ export const SignUp: FC = () => {
        }
     },[valid])
 
-    const registration = useCallback(()=>{
-        const isErrorEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test($("#login").val()?.toString() || '')
-        console.log(isErrorEmail)
-    },[])
+    const registration = useCallback(async ()=>{
+        const promise = await fetch('/user/register',{
+            method: 'POST',
+            body: JSON.stringify({
+                username: login,
+                password: pass,
+                nickname: nick
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        const response = await promise.json()
+        console.log(response)
+        response.reason ? setValid(false) : nav('/')
+    },[login, pass, nick])
     return(
         <div className='signupForm'>
             <div className="mymess">MyMess</div>

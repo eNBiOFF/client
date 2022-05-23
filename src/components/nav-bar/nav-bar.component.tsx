@@ -16,6 +16,11 @@ export const NavBar = () => {
         navigate('/profile')
     },[])
 
+    const exit = useCallback(() => {
+        localStorage.clear()
+        navigate('/')
+    }, [navigate])
+
     return(
         <div className='NavBar'>
                 <div className='NavIcons'>
@@ -26,7 +31,7 @@ export const NavBar = () => {
                         <img src={mess} className='MessIcon' alt='' />
                     </div>
                 </div>
-                <div className='Exit' style={{marginRight: '20px'}}>
+                <div className='Exit' style={{marginRight: '20px'}} onClick={exit}>
                     <div style={{height: '40px'}}>
                         <img style={{height: '40px'}} src={out} alt='' />
                     </div >

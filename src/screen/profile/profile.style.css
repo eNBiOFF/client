@@ -1,0 +1,39 @@
+.profile_screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 32%;
+    height: 38vw;
+    background: #C4C4C4;
+    box-shadow: 20px 10px 10px 4px rgba(88, 168, 120, 0.5), -20px -10px 15px 4px rgba(119, 88, 168, 0.5);
+    border-radius: 55px;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+}
+
+.SaveButton {
+    background: rgba(67, 255, 120, 0.61);
+    border-radius: 20px;
+    width: 26.8vw;
+    height: 6vh;
+    border: none;
+    font-size: 24px;
+    color: white;
+}
+
+.SaveButton:hover {
+    background-color: rgba(67, 255, 120, 0.21);
+}
