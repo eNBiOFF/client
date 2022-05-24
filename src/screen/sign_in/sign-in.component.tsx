@@ -43,6 +43,7 @@ export const SignInForm : FC = () => {
             localStorage.setItem('id_user', userData?.id)
             localStorage.setItem('phone', userData?.phoneNumber)
             localStorage.setItem('nick', userData?.nickname)
+            localStorage.setItem('status', userData?.status)
             
             nav('/main')
         }

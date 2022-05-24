@@ -6,7 +6,8 @@ export const Profile: FC = () => {
     const [img, setImg] = useState('')
     const nick = localStorage.getItem('nick') || ''
     const phone = localStorage.getItem('phone') || ''
-    const [login_inp, setLogin_inp] = useState('')
+    const status = localStorage.getItem('status') || ''
+    const [login_inp, setLogin_inp] = useState(status)
     const [nick_inp, setNick_inp] = useState(nick)
     const [phone_inp, setPhone_inp] = useState(phone)
     const [state, setState] = useState<File>()
@@ -68,6 +69,7 @@ export const Profile: FC = () => {
         console.log(data)
         localStorage.setItem('nick', nick_inp)
         localStorage.setItem('phone', phone_inp)
+        localStorage.setItem('status', login_inp)
       },[nick_inp,phone_inp,login_inp])
 
       useEffect(() => {
