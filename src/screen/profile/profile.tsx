@@ -38,7 +38,7 @@ export const Profile: FC = () => {
           const data = new FormData()
           data.append('file', imageFile)
           setState(imageFile)
-          fetch('/images',{
+          fetch('/api/images',{
               method: 'POST',
               headers: {
                 // "Content-type": "multipart/form-data",
@@ -52,7 +52,7 @@ export const Profile: FC = () => {
       },[state])
 
       const save = useCallback(async () => {
-        const response = await fetch('/user', {
+        const response = await fetch('/api/user', {
             method: 'PATCH',
             headers: {
                 'Accept': 'application/json',
@@ -74,7 +74,7 @@ export const Profile: FC = () => {
 
       useEffect(() => {
         const fetchimg = async () => {
-           const response = await fetch('/images/' + localStorage.getItem('id_user'),{
+           const response = await fetch('/api/images/' + localStorage.getItem('id_user'),{
                 headers: {
                     'Authorization' : 'Bearer '+ localStorage.getItem('token') 
                 }

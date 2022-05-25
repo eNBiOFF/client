@@ -17,14 +17,15 @@ export const Footer = (props: prop) => {
     const [isPaused, setIsPaused] = useState(false);
     const [data, setData] = useState(null);
     const [status, setStatus] = useState("");
+    const [showsmile,setsmile] = useState(false)
     //const init = new WebSocket('ws://localhost/api/messenger/connect?accessToken=' + localStorage.getItem('token'))
     //eslint-disable-next-line @typescript-eslint/ban-ts-comment
 
     const ws = useRef<WebSocket |  null>(null);
-    const [messagei, setMessagei] = useState('')
+    const [messagei, setMessagei] = useState("")
     console.log(messagei)
     useEffect( () => {
-        fetch('/messenger/history', {
+        fetch('/api/messenger/history', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
@@ -78,7 +79,7 @@ export const Footer = (props: prop) => {
           props.filenameF(file.name)
           const data = new FormData()
           data.append('file', file)
-          await fetch('/file',{
+          await fetch('/api/file',{
               method: 'POST',
               headers: {
                 // "Content-type": "multipart/form-data",
@@ -111,10 +112,16 @@ export const Footer = (props: prop) => {
     },[ws])
     return(
         <div className='footer'>
+            {showsmile &&
+            <div style={{position: 'absolute', height: '24px', width: '76px', left:'310px', bottom: '90px', backgroundColor: 'gray',cursor:'pointer', fontSize:'16px', borderRadius:'10px', paddingLeft: '2px'}}>
+               <span onClick={() => setMessagei(messagei + "🤗")}>🤗  </span>
+               <span onClick={() => setMessagei(messagei + "😁")}>😁  </span> 
+               <span onClick={() => setMessagei(messagei + "😂")}>😂</span>
+            </div>}
         <div className='input'>
-            <div className='smail'>
+            <div className='smail' onClick={() => setsmile(!showsmile)}>
                 
-            {/* <img className='doci' src={smile} alt='' /> */}
+            <img className='doci' src={smile} alt='' />
             </div>
             <input value={messagei} className='message' onChange={(e) => setMessagei(e.target.value)} ></input>
             <div className='doc'>

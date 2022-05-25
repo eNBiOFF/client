@@ -13,7 +13,7 @@ export const SignInForm : FC = () => {
         nav('/sign_up')
     },[])
     const auth = useCallback(async () => {
-        const promise = fetch('/auth',{
+        const promise = fetch('/api/auth',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -26,7 +26,7 @@ export const SignInForm : FC = () => {
         })
         const res = await promise
         const data = await res.json()
-        const fetchUser = await fetch('/user', {
+        const fetchUser = await fetch('/api/user', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

@@ -40,7 +40,7 @@ export const Messenger = (props: Prop) => {
     },[])
     useEffect(() => {
         const fetchHistory = async () => {
-            const response = await fetch('/messenger/history/' + local,{
+            const response = await fetch('/api/messenger/history/' + local,{
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 }

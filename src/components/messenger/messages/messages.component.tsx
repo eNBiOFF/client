@@ -28,7 +28,7 @@ export const Message = (props: props) => {
     },[blob,filename,props.type])
     useEffect(() => {
         if(props.type === 'File') {
-            fetch('/file?fileHandle=' + props.content, {
+            fetch('/api/file?fileHandle=' + props.content, {
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem('token')
                 }
@@ -52,10 +52,10 @@ export const Message = (props: props) => {
     
 
     return(
-        <div className='message_content' onClick={role}>
+        <div className='message_content' onClick={role} contentEditable='true'>
             <div className='author'>{props.author}</div>
             {/* {props.content} */}
-            {props.type === 'File' ? filename : props.content}
+            <span>{props.type === 'File' ? filename : props.content}</span>
             <div>{props.type === 'File' && 'Нажми на меня, чтобы скачать файл'}</div>
         </div>
     )

@@ -20,7 +20,7 @@ export const Room: FC<Prop> = (props: Prop) => {
         localStorage.setItem('usernameTo', props.userName); 
         props.setter(props.userName)
         const fetchimg = async () => {
-            const response = await fetch('/images/' + props.id,{
+            const response = await fetch('/api/images/' + props.id,{
                  headers: {
                      'Authorization' : 'Bearer '+ localStorage.getItem('token') 
                  }

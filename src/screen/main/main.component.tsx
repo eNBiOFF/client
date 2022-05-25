@@ -33,7 +33,7 @@ export const MainPage = () => {
 
     useEffect(  () => {
         const  responseUsers = async () => {
-            const promise = await fetch('/user/all', {
+            const promise = await fetch('/api/user/all', {
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
@@ -43,6 +43,7 @@ export const MainPage = () => {
             const data = await promise.json()
             setUsers(data)
             localStorage.setItem('userTo', data[0].id)
+            localStorage.setItem('usernameTo', data[0].nickname)
         }
         
         responseUsers().catch(er => console.error)

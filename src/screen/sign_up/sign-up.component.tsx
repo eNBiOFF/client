@@ -40,7 +40,7 @@ export const SignUp: FC = () => {
     },[valid])
 
     const registration = useCallback(async ()=>{
-        const promise = await fetch('/user/register',{
+        const promise = await fetch('/api/user/register',{
             method: 'POST',
             body: JSON.stringify({
                 username: login,
